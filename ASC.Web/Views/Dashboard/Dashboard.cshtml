@@ -1,0 +1,48 @@
+﻿@model ASC.Web.Models.ViewModels.DashboardViewModel
+@using ASC.Web.Models.BaseTypes
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@{
+  Layout = "_SecureLayout";
+}
+
+<div class="row"></div>
+@await  Html.PartialAsync("ServiceRequestGrid", Model.ServiceRequests, new ViewDataDictionary(ViewData)
+{{"SectionName", "Service Requests"}, {"Id", "tblServiceRequests"}, {"IsAudit", false}
+})
+
+@section Scripts{
+  <script>
+    $(document).ready(function () {
+// Initialize DataTable to show list of Service Requests
+      var table = $('#tblServiceRequests').DataTable({
+        'pageLength': 3,
+// Number of records to be displayed per page
+        'lengthMenu': [[3, 5, 10, -1], [3, 5, 10, 'All']],
+        // Remove default Sorting
+        'sorting': [],
+        'columns': [{ "visible": false }, null, { "width":
+          "20%" }, null, null, null]
+      });
+// Set Styles for DataTable and Number of Records to be displayed dropdown
+      $('.tblServiceRequests').css("width", "100%");
+      $('select[name$="ServiceRequests_length"]').material_select();
+
+
+      $(document).on('click',
+        '.view',
+        function() {
+          var tableId = '#' + $(this).parents('table').attr('id');
+
+          var serviceRequest = $(tableId).DataTable().row($(this).parents('tr')).data();
+          console.log(serviceRequest);
+
+          var id = serviceRequest[0];
+
+          console.log('@Url.Action("ServiceRequestDetails", "ServiceRequest")?Id=' + id);
+          window.location.href = '@Url.Action("ServiceRequestDetails", "ServiceRequest")?Id=' + id;
+    });
+
+
+    });
+  </script>
+}
