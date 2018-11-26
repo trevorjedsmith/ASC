@@ -8,8 +8,10 @@ script:
   - dotnet test ./ASC.Tests/ASC.Tests.csproj
   - dotnet build
   email:
-recipients:
-  - autoservicenternew@gmail.com
-  - automobileservicecenterdev@gmail.com
-  on_success: always
-  on_failure: always
+notifications:
+  email:
+    recipients:
+    - autoservicenternew@gmail.com
+    - automobileservicecenterdev@gmail.com
+    on_success: always
+    on_failure: always

@@ -51,7 +51,7 @@ namespace ASC.Tests
       public void HomeController_Index_Validation_Test_Fail()
       {
         var controller = new HomeController(_optionsMock.Object);
-        // Assert ModelState Error Count to 0
+        // Assert ModelState Error Count to 1
         Assert.Equal(1, (controller.Index() as ViewResult).ViewData.ModelState.ErrorCount);
       }
   }
