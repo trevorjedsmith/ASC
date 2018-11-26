@@ -45,5 +45,10 @@ namespace ASC.Web.Controllers
         return RedirectToAction("Login", "Account");
       }
     }
+
+    public IActionResult DeveloperPage()
+    {
+      return View();
+    }
   }
 }
