@@ -11,7 +11,7 @@ script:
 notifications:
   email:
     recipients:
-    - autoservicenternew@gmail.com
-    - automobileservicecenterdev@gmail.com
+    - trevorjedsmith@gmail.com
+    - trevor_jed_smith@hotmail.com
     on_success: always
     on_failure: always
