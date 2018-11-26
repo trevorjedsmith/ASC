@@ -29,19 +29,7 @@ namespace ASC.Web.Controllers
       return View();
     }
 
-    public IActionResult About()
-    {
-      ViewData["Message"] = "This is the ASC home page.";
-
-      return View();
-    }
-
-    public IActionResult Contact()
-    {
-      ViewData["Message"] = "This is the ASC Contact Page.";
-
-      return View();
-    }
+    //Master - homecontroller does not need the changes to About and Contact
 
     public IActionResult Error(string id)
     {
