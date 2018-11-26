@@ -1,9 +1,9 @@
 language: csharp
 dist: trusty
-dist: trusty
 sudo: required
 mono: none
 dotnet: 1.0.3
 script:
-- dotnet test ./ASC.Tests/ASC.Tests.csproj
-- dotnet build
+  - dotnet restore -s https://api.nuget.org/v3/index.json
+  - dotnet test ./ASC.Tests/ASC.Tests.csproj
+  - dotnet build
