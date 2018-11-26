@@ -2,12 +2,11 @@ language: csharp
 dist: trusty
 sudo: required
 mono: none
-dotnet: 1.0.4
+dotnet: 1.0.3
 script:
   - dotnet restore -s https://api.nuget.org/v3/index.json
   - dotnet test ./ASC.Tests/ASC.Tests.csproj
   - dotnet build
-  email:
 notifications:
   email:
     recipients:
