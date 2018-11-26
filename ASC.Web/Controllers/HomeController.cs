@@ -29,7 +29,6 @@ namespace ASC.Web.Controllers
       return View();
     }
 
-    //Master - homecontroller does not need the changes to About and Contact
 
     public IActionResult Error(string id)
     {
