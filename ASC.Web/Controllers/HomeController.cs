@@ -31,14 +31,14 @@ namespace ASC.Web.Controllers
 
     public IActionResult About()
     {
-      ViewData["Message"] = "Your application description page.";
+      ViewData["Message"] = "This is the ASC home page.";
 
       return View();
     }
 
     public IActionResult Contact()
     {
-      ViewData["Message"] = "Your contact page.";
+      ViewData["Message"] = "This is the ASC Contact Page.";
 
       return View();
     }
